@@ -1,0 +1,92 @@
+/* Xcentium project specific styles */
+
+.xcentium-project {
+  max-width: $desktop;
+  background-color: #000;
+  margin: 0 auto;
+
+  %page-blocks {
+    width: 100%;
+    background-size: cover !important;
+  }
+
+  .top {
+    background: url(../img/header.png);
+    @extend %page-blocks;
+    height: 45vw;
+    max-height: 635px;
+    @media screen and (max-width: $tablet) {
+        background: url(../img/header_tablet.png);
+        height: 55vw;
+        max-height: 425px;
+      }
+    @media screen and (max-width: $phone) {
+        background: url(../img/header_phone.png);
+        height: 45vw;
+        max-height: 300px;
+        }
+  }
+  .bottom {
+    background: url(../img/footer.png);
+    @extend %page-blocks;
+    height: 66vw;
+    max-height: 930px;
+    @media screen and (max-width: $tablet) {
+        background: url(../img/footer_tablet.png);
+        height: 160vw;
+        max-height: 1385px;
+    }
+    @media screen and (max-width: $phone) {
+        background: url(../img/footer_phone.png);
+        height: 215vw;
+        max-height: 1830px;
+      }
+  }
+
+  .content {
+    background: #fff;
+    width: 84%;
+    height: 100%;
+    padding: 90px 8%;
+    color: $content-text-color;
+    font-family: $content-font;
+    font-size: 1em;
+    @media screen and (max-width: $tablet) {
+        width: 100%;
+        padding: 90px 0;
+    }
+    p, h2, button, .block__image {
+      margin-top: 0;
+      line-height: 1.5em;
+      margin-bottom: 25px;
+      height: auto;
+    }
+    button {
+      border: 2px $content-text-color solid;
+      color: $content-text-color;
+      background: #fff;
+      border-radius: 25px;
+      font-weight: bold;
+      padding: 10px;
+      cursor: pointer;
+    }
+    &__blocks {
+      display: flex;
+      flex-direction: row;
+      @media screen and (max-width: $phone) {
+          flex-direction: column;
+        }
+      .block {
+        max-width: 360px;
+        margin: 0 15px;
+        &__image {
+          img {
+            width: 100%;
+            max-width: 360px;
+            cursor: move;
+          }
+        }
+      }
+    }
+  }
+}
